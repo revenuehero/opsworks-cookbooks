@@ -1,4 +1,3 @@
-require 'rest-client'
 require 'time'
 require 'openssl'
 require 'base64'
@@ -225,6 +224,7 @@ module S3FileLib
   end
 
   def self.client
+    require 'rest-client'
     RestClient.proxy = ENV['http_proxy']
     RestClient.proxy = ENV['https_proxy']
     RestClient.proxy = ENV['no_proxy']
